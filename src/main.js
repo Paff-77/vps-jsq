@@ -330,12 +330,8 @@ function calculate() {
         // Calculate progress based on single cycle, cap at 100%
         progress = Math.min((diffDays / cycleDays) * 100, 100);
     }
-    
-    let visualProgress = progress;
-    if (visualProgress > 100) visualProgress = 100;
-    if (visualProgress < 0) visualProgress = 0;
 
-    els.progressBar.style.width = `${visualProgress}%`;
+    els.progressBar.style.width = `${progress}%`;
     els.finalValue.textContent = valCNY.toFixed(2);
     els.originalCurrencyValue.textContent = `≈ ${valOrig.toFixed(2)} ${els.currency.value}`;
     els.daysRemaining.textContent = diffDays > 0 ? diffDays : "0";

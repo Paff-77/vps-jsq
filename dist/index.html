@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPS 剩余价值</title>
-  <script type="module" crossorigin src="/assets/index-Bkqbsign.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Svi7407U.css">
+    <title>VPShub</title>
+  <script type="module" crossorigin src="/assets/index-BCdlKKB8.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B4NZbo3E.css">
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-3 md:p-4 text-gray-800 dark:text-gray-300">
 
@@ -13,10 +13,9 @@
         
         <div class="flex items-end justify-between mb-3 md:mb-4 px-1 md:px-2">
             <div class="flex items-center gap-3">
-                <h1 class="text-xl md:text-3xl font-bold text-gray-800 dark:text-white uppercase tracking-normal transition-colors flex items-center leading-none">
-                    <!-- 图标修改为 🐔 -->
-                    <span class="mr-2 text-2xl md:text-3xl leading-none">🐔</span>
-                    <span>VPS 剩余价值</span>
+                <h1 class="text-xl md:text-3xl font-bold text-gray-800 dark:text-white tracking-normal transition-colors flex items-center leading-none">
+                    <span class="text-white dark:text-white">VPS</span>
+                    <span class="text-accent-500 ml-1">hub</span>
                 </h1>
             </div>
             
@@ -30,10 +29,15 @@
             </button>
         </div>
 
-        <div id="mainCard" class="relative rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 shadow-xl dark:shadow-none metal-card-border metal-card-top-line bg-white dark:bg-black border border-gray-200 dark:border-gray-800">
+        <div id="mainCard" class="relative rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 shadow-xl dark:shadow-none metal-card-border bg-white dark:bg-black border border-gray-200 dark:border-gray-800">
+            
+            <!-- Classic Yellow Top Bar -->
+            <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-r from-accent-500 to-accent-400 flex items-center px-4 z-20 shadow-md">
+                <span class="text-white font-bold text-lg md:text-xl tracking-wide">VPS<span class="text-black">hub</span></span>
+            </div>
             
             <!-- 左侧：输入区域，移动端 padding 改为 p-3 (12px) -->
-            <section class="w-full md:w-[60%] p-3 md:p-8 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-black transition-colors">
+            <section class="w-full md:w-[60%] p-3 md:p-8 pt-14 md:pt-16 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-black transition-colors">
                 <form id="calcForm" class="space-y-3 md:space-y-6">
                     
                     <div class="flex flex-row gap-3 md:gap-6">
@@ -43,7 +47,7 @@
                                 <span id="priceCNYPreview" class="text-[10px] md:text-xs font-mono text-gray-400 dark:text-gray-500 font-bold leading-none transition-colors whitespace-nowrap">≈0.00元</span>
                             </div>
                             <div class="relative">
-                                <span class="symbol-display absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 font-mono text-base md:text-lg z-10 pointer-events-none transition-colors">$</span>
+                                <span class="symbol-display absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-accent-500 font-mono text-base md:text-lg z-10 pointer-events-none transition-colors font-bold">$</span>
                                 <input type="number" id="price" step="0.01" 
                                     class="w-full h-10 md:h-12 pl-8 md:pl-10 pr-2 md:pr-4 rounded text-base md:text-xl font-mono font-medium tracking-wide transition-all outline-none bg-white border border-gray-300 text-gray-800 focus:border-accent-500 focus:ring-1 focus:ring-accent-500/20 dark:bg-[#1a1a1a] dark:border-gray-700 dark:text-gray-200 dark:focus:border-accent-500 dark:focus:ring-0" 
                                     placeholder="0.00">
@@ -120,7 +124,7 @@
             </section>
 
             <!-- 右侧：结果展示，移动端 padding 改为 p-3 (12px) -->
-            <section id="resultCard" class="w-full md:w-[40%] bg-white dark:bg-[#1a1a1a] p-3 md:p-8 flex flex-col relative transition-colors duration-300">
+            <section id="resultCard" class="w-full md:w-[40%] bg-white dark:bg-[#1a1a1a] p-3 md:p-8 pt-14 md:pt-16 flex flex-col relative transition-colors duration-300">
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-100/50 dark:from-gray-800/20 via-transparent to-transparent opacity-50 pointer-events-none transition-colors"></div>
 
                 <!-- 增加 px-1 (4px) 左右间隙 -->
@@ -128,7 +132,7 @@
                     <div class="text-right mb-1">
                         <h2 class="text-[10px] md:text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-bold mb-1 transition-colors">剩余价值 (RMB)</h2>
                         <div class="flex items-baseline justify-end gap-1">
-                            <span class="text-2xl md:text-3xl text-gray-500 dark:text-gray-600 font-light transition-colors">¥</span>
+                            <span class="text-2xl md:text-3xl text-accent-500 font-light transition-colors">¥</span>
                             <span id="finalValue" class="text-4xl md:text-6xl lg:text-7xl font-mono font-bold value-glow tracking-tighter leading-none transition-colors whitespace-nowrap">0.00</span>
                         </div>
                         <div id="originalCurrencyValue" class="text-xs md:text-sm text-gray-500 dark:text-gray-600 font-mono mt-0 transition-colors whitespace-nowrap">≈ 0.00 USD</div>

@@ -327,11 +327,8 @@ function calculate() {
     } else {
         valOrig = dailyPrice * diffDays;
         valCNY = valOrig * rate;
-        let baseDays = cycleDays;
-        if (diffDays > cycleDays) {
-            baseDays = cycleDays * Math.ceil(diffDays / cycleDays);
-        }
-        progress = (diffDays / baseDays) * 100;
+        // Calculate progress based on single cycle, cap at 100%
+        progress = Math.min((diffDays / cycleDays) * 100, 100);
     }
     
     let visualProgress = progress;

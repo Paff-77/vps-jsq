@@ -337,7 +337,8 @@ function calculate() {
     } else {
         valOrig = dailyPrice * diffDays;
         valCNY = valOrig * rate;
-        // Calculate actual progress percentage (can exceed 100%)
+        // Calculate actual progress percentage (can exceed 100% if days > cycle)
+        // This shows the real multiplier, e.g., 317 days / 30 days = 1056.7%
         progress = (diffDays / cycleDays) * 100;
     }
 
@@ -347,6 +348,7 @@ function calculate() {
     els.finalValue.textContent = valCNY.toFixed(2);
     els.originalCurrencyValue.textContent = `≈ ${valOrig.toFixed(2)} ${els.currency.value}`;
     els.daysRemaining.textContent = diffDays > 0 ? diffDays : "0";
+    // Show actual percentage (may exceed 100%) to indicate value beyond single cycle
     els.progressText.textContent = `${progress.toFixed(1)}%`;
 }
 

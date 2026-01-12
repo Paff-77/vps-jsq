@@ -298,6 +298,16 @@ function formatDate(date) {
 function updateCurrencySymbol() {
     const code = els.currency.value;
     els.symbolDisplay.textContent = currencySymbols[code] || code;
+    
+    // Dynamically adjust input padding based on symbol width
+    // Wait for next frame to ensure symbol is rendered
+    requestAnimationFrame(() => {
+        const symbolWidth = els.symbolDisplay.offsetWidth;
+        const baseLeftPadding = window.innerWidth >= 768 ? 16 : 12; // 1rem or 0.75rem
+        const spacing = 8; // 0.5rem spacing between symbol and number
+        const newPadding = baseLeftPadding + symbolWidth + spacing;
+        els.price.style.paddingLeft = `${newPadding}px`;
+    });
 }
 
 function calculate() {
@@ -327,11 +337,13 @@ function calculate() {
     } else {
         valOrig = dailyPrice * diffDays;
         valCNY = valOrig * rate;
-        // Calculate progress based on single cycle, cap at 100%
-        progress = Math.min((diffDays / cycleDays) * 100, 100);
+        // Calculate actual progress percentage (can exceed 100%)
+        progress = (diffDays / cycleDays) * 100;
     }
 
-    els.progressBar.style.width = `${progress}%`;
+    // Cap visual progress bar at 100%, but show actual percentage in text
+    const visualProgress = Math.min(progress, 100);
+    els.progressBar.style.width = `${visualProgress}%`;
     els.finalValue.textContent = valCNY.toFixed(2);
     els.originalCurrencyValue.textContent = `≈ ${valOrig.toFixed(2)} ${els.currency.value}`;
     els.daysRemaining.textContent = diffDays > 0 ? diffDays : "0";

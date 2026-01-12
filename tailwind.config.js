@@ -12,13 +12,18 @@ export default {
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
       },
       colors: {
-        amber: {
-          400: "#fbbf24",
-          500: "#f59e0b",
+        accent: {
+          400: "#ffa31a",
+          500: "#ff9000",
+          600: "#e68200",
+        },
+        primary: {
+          DEFAULT: "#000000",
+          dark: "#1a1a1a",
         }
       },
       boxShadow: {
-        'glow': '0 0 15px rgba(245, 158, 11, 0.15)',
+        'glow': '0 0 15px rgba(255, 147, 0, 0.2)',
       }
     },
   },

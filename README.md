@@ -33,7 +33,7 @@ npx wrangler deploy
 ```
 #### 一键 Cloudflare Pages 部署：
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/verkyer/vps-jsq)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Paff-77/vps-jsq)
 
 ## 🛠️ 开发与构建
 
